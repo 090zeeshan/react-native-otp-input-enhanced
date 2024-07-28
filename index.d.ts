@@ -5,7 +5,7 @@
 
 declare module '@twotalltotems/react-native-otp-input' {
   import * as React from 'react'
-  import { TextStyle, ViewStyle } from 'react-native';
+  import { TextStyle, ViewStyle, StyleProp} from 'react-native';
 
   /**
    * Define types of keyboard
@@ -22,11 +22,15 @@ declare module '@twotalltotems/react-native-otp-input' {
     /**
      * Style of the input fields
      */
-    codeInputFieldStyle?: TextStyle;
+    codeInputFieldStyle?: StyleProp<TextStyle>;
     /**
      * Style of highlighted status for input fields
      */
-    codeInputHighlightStyle?: TextStyle;
+    codeInputHighlightStyle?: StyleProp<TextStyle>;
+    /**
+     * Style of filled input fields
+     */
+    codeInputFilledStyle?: StyleProp<TextStyle>;
     /**
      * Callback function
      * Trigger when all fields of the OTP has been filled
