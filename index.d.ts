@@ -3,7 +3,7 @@
  */
 
 
-declare module '@twotalltotems/react-native-otp-input' {
+declare module 'react-native-otp-input' {
   import * as React from 'react'
   import { TextStyle, ViewStyle, StyleProp} from 'react-native';
 
