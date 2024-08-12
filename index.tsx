@@ -1,5 +1,5 @@
 /// <reference path="index.d.ts" />
-import { InputProps, OTPInputViewState } from 'react-native-otp-input';
+import { InputProps, OTPInputViewState } from 'react-native-otp-input-enhanced';
 import React, { Component } from 'react'
 import { View, TextInput, TouchableWithoutFeedback, Keyboard,  I18nManager, EmitterSubscription, StyleSheet, } from 'react-native'
 import styles from './styles'

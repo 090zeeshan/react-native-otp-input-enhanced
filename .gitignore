@@ -59,3 +59,4 @@ ReactotronConfig.js
 
 # ts build dir
 dist
+.yarn

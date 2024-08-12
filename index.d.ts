@@ -3,7 +3,7 @@
  */
 
 
-declare module 'react-native-otp-input' {
+declare module 'react-native-otp-input-enhanced' {
   import * as React from 'react'
   import { TextStyle, ViewStyle, StyleProp} from 'react-native';
 
