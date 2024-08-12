@@ -10,7 +10,7 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 
-import OTPInputView from '@twotalltotems/react-native-otp-input'
+import OTPInputView from 'react-native-otp-input-enhanced'
 
 export default class App extends React.Component {
   state = {
@@ -32,6 +32,7 @@ export default class App extends React.Component {
           autoFocusOnLoad
           codeInputFieldStyle={styles.underlineStyleBase}
           codeInputHighlightStyle={styles.underlineStyleHighLighted}
+          codeInputFilledStyle={styles.underlineStyleHighLighted}
           onCodeFilled = {(code => {
               console.log(`Code is ${code}, you are good to go!`)
           })}
