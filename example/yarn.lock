@@ -4717,7 +4717,7 @@ __metadata:
     prettier: 2.8.8
     react: 18.2.0
     react-native: 0.74.5
-    react-native-otp-input-enhanced: ^1.0.6
+    react-native-otp-input-enhanced: ^1.0.7
     react-test-renderer: 18.2.0
     typescript: 5.0.4
   languageName: unknown
@@ -7938,10 +7938,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-otp-input-enhanced@npm:^1.0.6":
-  version: 1.0.6
-  resolution: "react-native-otp-input-enhanced@npm:1.0.6"
-  checksum: fb8424eba68ba19941032465ca493619140915ddcb2ce4dbbf5bb1183b5eb5fd3d1d58bcde82e45be57debf1cb779a265aba4fc4d17620a01ce87a33d5622a9c
+"react-native-otp-input-enhanced@npm:^1.0.7":
+  version: 1.0.7
+  resolution: "react-native-otp-input-enhanced@npm:1.0.7"
+  checksum: 0aa82e8d216361987108efb1739f846f4e19460a6cefa022fade4c4c947da731aa81df037148f3851dd5e0e7d362bd4db9058ea3d8c0cfd43d7abf8cce35ec08
   languageName: node
   linkType: hard
 
