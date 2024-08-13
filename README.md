@@ -3,7 +3,7 @@
 # React Native OTP Input Enhanced
 
 **react-native-otp-input-enhanced** is a fork of **@twotalltotems/react-native-otp-input** with some enhancements. 
-It is a tiny Javascript library which provides an elegant UI for the end user to input one time passcode (OTP). It handles the input suggestion on iOS when the OTP SMS is received. ~~For Android, it will autofill when the user presses the copy button on the SMS notification bar.~~ It also features a carefully crafted flow to handle edge cases for volatile user gestures. We provide default UI, but you can always customize the appearance as you like.
+It is a tiny Javascript library which provides an elegant UI for the end user to input one time passcode (OTP). It handles the input suggestion on iOS when the OTP SMS is received. For Android, it will autofill when the user presses the copy button on the SMS notification bar. It also features a carefully crafted flow to handle edge cases for volatile user gestures. We provide default UI, but you can always customize the appearance as you like.
 
 ![demo.gif](https://s3.ca-central-1.amazonaws.com/tttevents/iosvideo.gif)
 ![demo.gif](https://s3.ca-central-1.amazonaws.com/tttevents/android.gif)
@@ -13,6 +13,15 @@ It is a tiny Javascript library which provides an elegant UI for the end user to
 `npm install --save react-native-otp-input-enhanced`
 or
 `yarn add react-native-otp-input-enhanced`
+
+## Dependencies
+
+### NOTES: 
+From version 1.1.0: We use @react-native-clipboard/clipboard to handle the clipboard in this package, So you should install @react-native-clipboard/clipboard
+
+`npm install --save @react-native-clipboard/clipboard`
+or
+`yarn add @react-native-clipboard/clipboard`
 
 ## Basic Usage
 
@@ -94,6 +103,6 @@ const styles = StyleSheet.create({
 
 The iOS input suggestion requires React Native 0.58+ and works for iOS 12 and above.
 
-~~On Android, it will be auto filled when you press the copy code button in the notification bar (see above GIF). It will do so only if the code is sent after the view is loaded. So make sure you request the code **AFTER** this view is loaded.~~
+On Android, it will be auto filled when you press the copy code button in the notification bar (see above GIF). It will do so only if the code is sent after the view is loaded. So make sure you request the code **AFTER** this view is loaded.
 
 If you are interested in Android SMS Retriever API, we would suggest @Faizal's repo [React-Native-OTP-Verify](https://github.com/faizalshap/react-native-otp-verify). It looks pretty cool and it should be straight-forward to use React-Native-OTP-Verify along with this library.
