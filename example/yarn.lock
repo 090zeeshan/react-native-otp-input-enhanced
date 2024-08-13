@@ -2146,6 +2146,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-clipboard/clipboard@npm:^1.14.1":
+  version: 1.14.1
+  resolution: "@react-native-clipboard/clipboard@npm:1.14.1"
+  peerDependencies:
+    react: 16.9.0 || 16.11.0 || 16.13.1 || 17.0.1 || 17.0.2 || 18.0.0 || 18.1.0 || 18.2.0
+    react-native: ^0.61.5 || ^0.62.3 || ^0.63.2 || ^0.64.2 || ^0.65.0 || ^0.66.0 || ^0.67.0 || ^0.68.0 || ^0.69.0 || ^0.70.0 || ^0.71.0 || ^0.72.0 || ^0.73.0
+    react-native-macos: ^0.61.0 || ^0.62.0 || ^0.63.0 || ^0.64.0 || ^0.65.0 || ^0.66.0 || ^0.67.0 || ^0.68.0 || ^0.69.0 || ^0.70.0 || ^0.71.0 || ^0.72.0 || ^0.73.0
+    react-native-windows: ^0.61.0 || ^0.62.0 || ^0.63.0 || ^0.64.0 || ^0.65.0 || ^0.66.0 || ^0.67.0 || ^0.68.0 || ^0.69.0 || ^0.70.0 || ^0.71.0 || ^0.72.0 || ^0.73.0
+  checksum: 005ce2bee4d6e30b2a6b11be0d0ee169ab108d24f2a9b518b0ba8e5b96616c6dfb089c28644c1b5e3c1b9aa786c92cbf781e525223f56ab8589da1df79cae31f
+  languageName: node
+  linkType: hard
+
 "@react-native-community/cli-clean@npm:13.6.9":
   version: 13.6.9
   resolution: "@react-native-community/cli-clean@npm:13.6.9"
@@ -4705,6 +4717,7 @@ __metadata:
     "@babel/core": ^7.20.0
     "@babel/preset-env": ^7.20.0
     "@babel/runtime": ^7.20.0
+    "@react-native-clipboard/clipboard": ^1.14.1
     "@react-native/babel-preset": 0.74.87
     "@react-native/eslint-config": 0.74.87
     "@react-native/metro-config": 0.74.87
@@ -4717,7 +4730,7 @@ __metadata:
     prettier: 2.8.8
     react: 18.2.0
     react-native: 0.74.5
-    react-native-otp-input-enhanced: ^1.0.7
+    react-native-otp-input-enhanced: ^1.1.0
     react-test-renderer: 18.2.0
     typescript: 5.0.4
   languageName: unknown
@@ -7938,10 +7951,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-otp-input-enhanced@npm:^1.0.7":
-  version: 1.0.7
-  resolution: "react-native-otp-input-enhanced@npm:1.0.7"
-  checksum: 0aa82e8d216361987108efb1739f846f4e19460a6cefa022fade4c4c947da731aa81df037148f3851dd5e0e7d362bd4db9058ea3d8c0cfd43d7abf8cce35ec08
+"react-native-otp-input-enhanced@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "react-native-otp-input-enhanced@npm:1.1.0"
+  dependencies:
+    "@react-native-clipboard/clipboard": ^1.14.1
+  checksum: 7f5f5af4099cf60a8dd1a59365b2ce020e0f066285867a0707de5f1f298a245a7a85569993169e02341380d90e9e71d69c8fdd9cd4c71088526f2b4b7f586eff
   languageName: node
   linkType: hard
 
