@@ -1,10 +1,11 @@
 /// <reference path="index.d.ts" />
 import { InputProps, OTPInputViewState } from 'react-native-otp-input-enhanced';
 import React, { Component } from 'react'
-import { View, TextInput, TouchableWithoutFeedback, Keyboard,  I18nManager, EmitterSubscription, StyleSheet, } from 'react-native'
+import { View, TextInput, TouchableWithoutFeedback, Keyboard,  I18nManager, EmitterSubscription, StyleSheet, Platform, } from 'react-native'
 import styles from './styles'
 import { isAutoFillSupported } from './helpers/device'
 import { codeToArray } from './helpers/codeToArray'
+import Clipboard from '@react-native-clipboard/clipboard';
 
 export default class OTPInputView extends Component<InputProps, OTPInputViewState> {
     static defaultProps: InputProps = {
@@ -22,8 +23,8 @@ export default class OTPInputView extends Component<InputProps, OTPInputViewStat
     private fields: TextInput[] | null[] = []
     private keyboardDidHideListener?: EmitterSubscription;
     private timer?: NodeJS.Timeout;
-    // private hasCheckedClipBoard?: boolean;
-    // private clipBoardCode?: string;
+    private hasCheckedClipBoard?: boolean;
+    private clipBoardCode?: string;
 
     constructor(props: InputProps) {
         super(props)
@@ -42,7 +43,7 @@ export default class OTPInputView extends Component<InputProps, OTPInputViewStat
     }
 
     componentDidMount() {
-        // this.copyCodeFromClipBoardOnAndroid()
+        this.copyCodeFromClipBoardOnAndroid()
         this.bringUpKeyBoardIfNeeded()
         this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this.handleKeyboardDidHide)
     }
@@ -54,12 +55,12 @@ export default class OTPInputView extends Component<InputProps, OTPInputViewStat
         this.keyboardDidHideListener?.remove()
     }
 
-    // private copyCodeFromClipBoardOnAndroid = () => {
-    //     if (Platform.OS === "android") {
-    //         this.checkPinCodeFromClipBoard()
-    //         this.timer = setInterval(this.checkPinCodeFromClipBoard, 400)
-    //     }
-    // }
+    private copyCodeFromClipBoardOnAndroid = () => {
+        if (Platform.OS === "android") {
+            this.checkPinCodeFromClipBoard()
+            this.timer = setInterval(this.checkPinCodeFromClipBoard, 400)
+        }
+    }
 
     bringUpKeyBoardIfNeeded = () => {
         const { autoFocusOnLoad, pinCount } = this.props
@@ -89,24 +90,24 @@ export default class OTPInputView extends Component<InputProps, OTPInputViewStat
         }
     }
 
-    // checkPinCodeFromClipBoard = () => {
-    //     const { pinCount, onCodeFilled } = this.props
-    //     const regexp = new RegExp(`^\\d{${pinCount}}$`)
-    //     Clipboard.getString().then(code => {
-    //         if (this.hasCheckedClipBoard && regexp.test(code) && (this.clipBoardCode !== code)) {
-    //             this.setState({
-    //                 digits: code.split(""),
-    //             }, () => {
-    //                 this.blurAllFields()
-    //                 this.notifyCodeChanged()
-    //                 onCodeFilled && onCodeFilled(code)
-    //             })
-    //         }
-    //         this.clipBoardCode = code
-    //         this.hasCheckedClipBoard = true
-    //     }).catch(() => {
-    //     })
-    // }
+    checkPinCodeFromClipBoard = () => {
+        const { pinCount, onCodeFilled } = this.props
+        const regexp = new RegExp(`^\\d{${pinCount}}$`)
+        Clipboard.getString().then(code => {
+            if (this.hasCheckedClipBoard && regexp.test(code) && (this.clipBoardCode !== code)) {
+                this.setState({
+                    digits: code.split(""),
+                }, () => {
+                    this.blurAllFields()
+                    this.notifyCodeChanged()
+                    onCodeFilled && onCodeFilled(code)
+                })
+            }
+            this.clipBoardCode = code
+            this.hasCheckedClipBoard = true
+        }).catch(() => {
+        })
+    }
 
     private handleChangeText = (index: number, text: string) => {
         const { onCodeFilled, pinCount } = this.props
